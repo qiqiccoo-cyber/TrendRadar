@@ -72,18 +72,12 @@ platforms:
     - id: "baidu"
       name: "百度热搜"
       expected_domain: "baidu.com"
-    - id: "wallstreetcn-hot"
-      name: "华尔街见闻"
-      expected_domain: "wallstreetcn.com"
     - id: "thepaper"
       name: "澎湃新闻"
       expected_domain: "thepaper.cn"
     - id: "bilibili-hot-search"
       name: "bilibili 热搜"
       expected_domain: "bilibili.com"
-    - id: "cls-hot"
-      name: "财联社热门"
-      expected_domain: "cls.cn"
     - id: "ifeng"
       name: "凤凰网"
       expected_domain: "ifeng.com"
@@ -99,6 +93,22 @@ platforms:
     - id: "zhihu"
       name: "知乎"
       expected_domain: "zhihu.com"
+    # 娱乐向热榜
+    - id: "tencent-hot"
+      name: "腾讯新闻"
+      expected_domain: "qq.com"
+    - id: "hupu"
+      name: "虎扑步行街"
+      expected_domain: "hupu.com"
+    - id: "qqvideo-tv-hotsearch"
+      name: "腾讯视频热搜"
+      expected_domain: "qq.com"
+    - id: "iqiyi-hot-ranklist"
+      name: "爱奇艺热播"
+      expected_domain: "iqiyi.com"
+    - id: "douban"
+      name: "豆瓣热门电影"
+      expected_domain: "douban.com"
 
 
 
@@ -137,9 +147,26 @@ rss:
       enabled: false                  # 禁用
       # max_age_days: 3               # 示例：推送 3 天内的文章（更新较慢的博客）
      
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
+    # 娱乐向 RSS
+    - id: "chinanews-culture"
+      name: "中新网文娱"
+      url: "https://www.chinanews.com.cn/rss/culture.xml"
+
+    - id: "chinanews-society"
+      name: "中新网社会"
+      url: "https://www.chinanews.com.cn/rss/society.xml"
+
+    - id: "tmz"
+      name: "TMZ"
+      url: "https://www.tmz.com/rss.xml"
+
+    - id: "eonline"
+      name: "E! Online"
+      url: "https://www.eonline.com/syndication/feeds/rssfeeds/topstories.xml"
+
+    - id: "pagesix"
+      name: "Page Six"
+      url: "https://pagesix.com/feed/"
 
     # 自定义源示例
     # - id: "custom-feed"
@@ -245,8 +272,8 @@ display:
   # 独立展示区：将指定平台/RSS 完整展示，不受关键词过滤
   # 推送展示由 regions.standalone 控制，AI 分析由 ai_analysis.include_standalone 控制
   standalone:
-    platforms: ["weibo", "douyin", "baidu"]      # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: []                                # RSS 源 ID 列表（如 ["hacker-news"]）
+    platforms: ["weibo", "douyin", "baidu", "hupu", "qqvideo-tv-hotsearch"]  # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    rss_feeds: ["chinanews-culture", "tmz", "eonline", "pagesix"]  # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                                # 每个源最多展示条数（0=不限制）
 
 
