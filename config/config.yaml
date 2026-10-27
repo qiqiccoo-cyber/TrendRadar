@@ -168,6 +168,39 @@ rss:
       name: "Page Six"
       url: "https://pagesix.com/feed/"
 
+    # DailyHotApi 榜单（RSS 输出）
+    - id: "dh-douban-group"
+      name: "豆瓣小组"
+      url: "http://172.104.115.145:6688/douban-group?rss=true"
+
+    - id: "dh-kuaishou"
+      name: "快手"
+      url: "http://172.104.115.145:6688/kuaishou?rss=true"
+
+    - id: "dh-sina"
+      name: "新浪热榜"
+      url: "http://172.104.115.145:6688/sina?rss=true"
+
+    - id: "dh-netease-news"
+      name: "网易新闻"
+      url: "http://172.104.115.145:6688/netease-news?rss=true"
+
+    - id: "dh-sina-news"
+      name: "新浪新闻"
+      url: "http://172.104.115.145:6688/sina-news?rss=true"
+
+    - id: "dh-newsmth"
+      name: "水木社区"
+      url: "http://172.104.115.145:6688/newsmth?rss=true"
+
+    - id: "dh-bilibili"
+      name: "B站热门"
+      url: "http://172.104.115.145:6688/bilibili?rss=true"
+
+    - id: "dh-acfun"
+      name: "AcFun"
+      url: "http://172.104.115.145:6688/acfun?rss=true"
+
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
@@ -273,7 +306,7 @@ display:
   # 推送展示由 regions.standalone 控制，AI 分析由 ai_analysis.include_standalone 控制
   standalone:
     platforms: ["weibo", "douyin", "baidu", "hupu", "qqvideo-tv-hotsearch"]  # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: ["chinanews-culture", "tmz", "eonline", "pagesix"]  # RSS 源 ID 列表（如 ["hacker-news"]）
+    rss_feeds: ["dh-douban-group", "dh-kuaishou", "chinanews-culture", "tmz", "eonline", "pagesix"]  # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                                # 每个源最多展示条数（0=不限制）
 
 
